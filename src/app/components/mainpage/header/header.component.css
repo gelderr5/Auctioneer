@@ -1,0 +1,43 @@
+/*-------------header------------*/
+header {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto;
+  grid-column-gap: 2px;
+}
+
+.heading {
+  display: grid;
+  grid-template-rows: 60% 30%;
+  background: #99e6ff;
+}
+
+.header-image {
+  background: #99e6ff;
+}
+
+.image {
+  width: 100%;
+  height: 178px;
+}
+
+.title {
+  grid-row: 1/2;
+  text-align: center;
+  border-top: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
+.sub-title-1 {
+  grid-row: 2/2;
+  text-align: left;
+  font-size: 20px;
+}
+
+.sub-title-2 {
+  grid-row: 2/2;
+  text-align: right;
+  font-size: 20px;
+  padding-top: 2%;
+}
+/*---------end of header--------*/
