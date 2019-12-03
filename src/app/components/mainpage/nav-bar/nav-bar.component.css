@@ -1,103 +1,116 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
-@import url(https://fonts.googleapis.com/css?family=Bree+Serif);
-
-body {
-  background: #212121;
-  font-size:22px;
-  line-height: 32px;
-  color: #ffffff;
-  word-wrap:break-word !important;
-  font-family: 'Open Sans', sans-serif;
-}
-
-h1 {
-  font-size: 60px;
-  text-align: center;
-  color: #FFF;
-}
-
-h3 {
-  font-size: 30px;
-  text-align: center;
-  color: #FFF;
-}
-
-h3 a {
-  color: #FFF;
-}
-
-a {
-  color: #FFF;
-}
-
-h1 {
-  margin-top: 100px;
-  text-align:center;
-  font-size:60px;
-  font-family: 'Bree Serif', 'serif';
-}
-
-#container {
-  margin: 0 auto;
-}
-
-p {
-  text-align: center;
-}
-
-nav {
-  background-color: #99e6ff;
-}
-
-nav ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+.nav-bar {
+  background-color: burlywood;
+  margin-top: 1px;
   position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 45% 30%;
+  grid-column-gap: 25%;
+  line-height: 35px;
+  height: 40px;
 }
 
-nav ul li {
-  display:inline-block;
-  background-color: #99e6ff;
+.ul-1 {
+  display: grid;
+  line-height: 35px;
+  grid-template-columns: repeat(4, auto);
+  list-style: none;
+  background-color: burlywood;
+  text-align: center;
+  padding-left: 1px;
+  height: 40px;
 }
 
-nav a {
-  display:block;
-  padding:0 10px;
-  color:#FFF;
-  font-size:20px;
-  line-height: 60px;
-  text-decoration:none;
+.ul-2 {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  list-style: none;
+  background-color: burlywood;
+  text-align: center;
+  padding-left: 1px;
+  height: 40px;
 }
 
-nav a:hover {
-  background-color: #242b36;
+.nav-bar li {
+  background-color: sienna;
 }
 
-/* Hide Dropdowns by Default */
-nav ul ul {
+.nav-bar-first-li:hover, .nav-bar-link:hover, .nav-dropdown:hover {
+  background-color: peru;
+}
+
+.nav-bar a {
+  color: white;
+}
+
+.nav-bar-first-li {
+  border-left: 1px solid burlywood;
+}
+
+.nav-bar li {
+  border-right: 1px solid burlywood;
+}
+
+.nav-bar a:hover {
+  text-decoration: none;
+  display: block;
+}
+
+.nav-dropbtn {
+  background-color: sienna;
+  width: 100%;
+  color: #ffffff;
+  border: none;
+}
+
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-dropdown-content-1 {
   display: none;
   position: absolute;
-  top: 60px; /* the height of the main nav */
+  background-color: sienna;
+  min-width: 150%;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
-/* Display Dropdowns on Hover */
-nav ul li:hover > ul {
-  display:inherit;
+.nav-dropdown-content-1 a {
+  color: #ffffff;
+  padding: 6px 12px;
+  text-decoration: none;
+  display: block;
+  border: 1px solid burlywood;
 }
 
-/* Fisrt Tier Dropdown */
-nav ul ul li {
-  width:170px;
-  float:none;
-  display:list-item;
-  position: relative;
+.nav-dropdown-content-1 a:hover {
+  background-color: peru;
 }
 
-.navbar-right {
-  float: right;
+.nav-dropdown:hover .nav-dropdown-content-1 {display: block;}
+
+
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: sienna;
+  min-width: 100%;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 1;
 }
 
-/* Change this in order to change the Dropdown symbol */
-li > a:after { content:  ' ▼'; }
-li > a:only-child:after { content: ''; }
+.nav-dropdown-content a {
+  color: #ffffff;
+  padding: 6px 12px;
+  text-decoration: none;
+  display: block;
+  border: 1px solid burlywood;
+}
+
+.nav-dropdown-content a:hover {
+  background-color: peru;
+}
+
+.nav-dropdown:hover .nav-dropdown-content {display: block;}

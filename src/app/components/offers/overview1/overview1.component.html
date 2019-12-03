@@ -1,1 +1,21 @@
-<p>overview1 works!</p>
+<div class="overview1">
+  <h4>List of all offers:</h4>
+  <table>
+    <tr class="top">
+      <th>Title</th>
+      <th>Selling Date</th>
+      <th>Status</th>
+      <th>Number Of Bids</th>
+      <th>Value Highest Bid</th>
+    </tr>
+    <tr *ngFor="let offer of offers" class="bottom">
+      <td> {{ offer.title }} </td>
+      <td> {{ offer.sellDateString }} </td>
+      <td> {{ offer.auctionStatus }} </td>
+      <td> {{ offer.numberOfBids }} </td>
+      <td *ngIf="offer.valueHighestBid != null; else nothing">&euro; {{ offer.valueHighestBid }} </td>
+      <ng-template #nothing></ng-template>
+    </tr>
+  </table>
+  <button (click)="addRandomOffer()">Add Offer</button>
+</div>

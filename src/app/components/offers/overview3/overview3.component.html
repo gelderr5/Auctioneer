@@ -1,0 +1,22 @@
+<div class="overview3">
+  <h4>Overview of all offered articles:</h4>
+  <div class="panels">
+    <div>
+      <table>
+        <tr class="top">
+          <td>Offer title</td>
+        </tr>
+        <tr *ngFor="let offer of offers" class="bottom">
+          <td (click)="popupSwitch($event.target.innerText)"
+              [ngClass]="{'highlight': (offer === offers[selectedIndex]) && isSelected}">{{ offer.title }}</td>
+        </tr>
+      </table>
+      <button (click)="service.addRandomOffer()">Add Offer</button>
+    </div>
+    <div *ngIf="isSelected; else displayMessage">
+      <app-detail3 [(selectedOffer)]="selectOffer" [(editedOfferId)]="selectedIndex"
+                   [(selectedBoolean)]="isSelected"></app-detail3>
+    </div>
+    <ng-template #displayMessage>Select an offer at the left</ng-template>
+  </div>
+</div>

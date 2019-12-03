@@ -1,20 +1,33 @@
-<div id="container">
-  <nav>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">My Offers</a></li>
-      <li><a href="#">My Bids</a>
-        <!-- First Tier Drop Down -->
-        <ul>
-          <li><a href="#">Active</a></li>
-          <li><a href="#">History</a></li>
-        </ul>
-      </li>
-      <li><a href="#">My Account</a></li>
-      <div class="navbar-right">
-        <li><a href="#">Sign Up</a></li>
-        <li><a href="#">Log In</a></li>
+<div class="nav-bar">
+  <ul class="ul-1">
+    <li class="nav-bar-first-li"><a routerLink="/home" routerLinkActive="active">Home</a></li>
+    <li class="nav-dropdown">
+      <button class="nav-dropbtn">My Offers</button>
+      <div class="nav-dropdown-content-1">
+        <a routerLink="/offers/overview1" routerLinkActive="active">All offers list</a>
+        <a routerLink="/offers/overview2" routerLinkActive="active">M/D (component store)</a>
+        <a routerLink="/offers/overview3" routerLinkActive="active">M/D (from service)</a>
+        <a routerLink="/offers/overview4" routerLinkActive="active">M/D (queryparameter)</a>
+        <a routerLink="/offers/overview41" routerLinkActive="active">M/D (qp+deactivate)</a>
+        <a routerLink="/offers/overview5" routerLinkActive="active">M/D (routerparams)</a>
+        <a routerLink="/offers/overview42" routerLinkActive="active">M/D (validated)</a>
+        <a routerLink="/offers/overview6" routerLinkActive="active">M/D (persisted)</a>
       </div>
+    <li class="nav-dropdown">
+      <button class="nav-dropbtn">My Bids</button>
+      <div class="nav-dropdown-content">
+        <a href="#">Active</a>
+        <a href="#">History</a>
+      </div>
+    </li>
+    <li *ngIf="isLogged()" [ngClass]="{ 'nav-bar-link' : isLogged() }">
+      <a href="#">My Account</a></li>
+  </ul>
+  <div>
+    <ul class="ul-2">
+      <li *ngIf="!isLogged()" [ngClass]="{ 'nav-bar-link' : !isLogged() }">
+      <a routerLink="signup" routerLinkActive="active">Sign up</a></li>
+      <li class="nav-bar-link"><a routerLink="login" routerLinkActive="active">Log in</a></li>
     </ul>
-  </nav>
+  </div>
 </div>

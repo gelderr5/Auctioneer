@@ -1,0 +1,46 @@
+.overview4 {
+  padding-left: 1px;
+}
+
+table {
+  width: 80%;
+}
+
+h4 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.top {
+  background-color: burlywood;
+}
+
+.bottom td {
+  border: 1px solid #000000;
+}
+
+.bottom td:hover {
+  cursor: pointer;
+  background-color: lightblue;
+}
+
+button {
+  background-color: #0080ff;
+  margin-top: 1%;
+  color: #000000;
+  border: none;
+}
+
+button:hover {
+  background-color: royalblue;
+}
+
+.panels {
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
+.highlight {
+  background-color: lightblue;
+}
+

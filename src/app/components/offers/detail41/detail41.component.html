@@ -1,0 +1,62 @@
+<div class="detail41">
+  <table>
+    <tr class="top">
+      <th>Selected offer details (id={{editedOfferId}})</th>
+      <td></td>
+    </tr>
+    <tr class="bottom">
+      <td class="description">Title:</td>
+      <td>
+        <label>
+          <input type="text" [(ngModel)]="selectedOffer.title" />
+        </label>
+      </td>
+    </tr>
+    <tr class="bottom">
+      <td class="description">Description:</td>
+      <td>
+        <label>
+          <input type="text" [(ngModel)]="selectedOffer.description"/>
+        </label>
+      </td>
+    </tr>
+    <tr class="bottom">
+      <td class="description">Status:</td>
+      <td>
+        <label>
+          <select [(ngModel)]="selectedOffer.auctionStatus">
+            <option>NEW</option>
+            <option>FOR_SALE</option>
+            <option>SOLD</option>
+            <option>PAID</option>
+            <option>DELIVERED</option>
+            <option>CLOSED</option>
+            <option>EXPIRED</option>
+            <option>WITHDRAWN</option>
+          </select>
+        </label>
+      </td>
+    </tr>
+    <tr class="bottom">
+      <td class="description">Number Of Bids:</td>
+      <td>
+        <label>
+          <input type="text" [(ngModel)]="selectedOffer.numberOfBids"/>
+        </label>
+      </td>
+    </tr>
+    <tr class="bottom">
+      <td class="description">Highest Bid:</td>
+      <td>
+        <label>
+          <input type="text" [(ngModel)]="selectedOffer.valueHighestBid"/>
+        </label>
+      </td>
+    </tr>
+  </table>
+  <button (click)="popupCancel()">Cancel</button>
+  <button (click)="popupReset()" [disabled]="!change()">Reset</button>
+  <button (click)="popupClear()">Clear</button>
+  <button (click)="popupSave()" [disabled]="!change()">Save</button>
+  <button (click)="popupDelete()">Delete</button>
+</div>

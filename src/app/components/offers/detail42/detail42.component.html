@@ -1,0 +1,93 @@
+<div class="detail42">
+  <table>
+    <tr class="top">
+      <th>Selected offer details (id={{editedOfferId}})</th>
+      <td></td>
+    </tr>
+    <tr class="bottom">
+      <td class="description">Title:</td>
+      <td>
+        <form #editForm="ngForm">
+          <input [ngClass]="{ 'marked-warning' : title.invalid }" type="text" name="title"
+                 ngModel required minlength="3" #title='ngModel'
+                 [(ngModel)]="selectedOffer.title">
+          <div class="input-warning" *ngIf="title.invalid">
+            <div *ngIf="title.errors.required">{{ errorMessages(1) }}</div>
+            <div *ngIf="title.errors.minlength">{{ errorMessages(2) }}</div>
+            <div *ngIf="title.errors.pattern">{{ errorMessages(3) }}</div>
+          </div>
+        </form>
+      </td>
+    </tr>
+    <tr class="bottom">
+      <td class="description">Description:</td>
+      <td>
+        <form #edit2Form="ngForm">
+          <input [ngClass]="{ 'marked-warning2' : description.invalid }" type="text" name="description"
+                 ngModel required minlength="10" #description='ngModel'
+                 [(ngModel)]="selectedOffer.description">
+          <div class="input-warning" *ngIf="description.invalid">
+            <div *ngIf="description.errors.required">{{ errorMessages(1) }}</div>
+            <div *ngIf="description.errors.minlength">{{ errorMessages(2) }}</div>
+            <div *ngIf="description.errors.pattern">{{ errorMessages(3) }}</div>
+          </div>
+        </form>
+      </td>
+    </tr>
+    <tr class="bottom">
+      <td class="description">Status:</td>
+      <td>
+        <form #edit3Form="ngForm">
+          <select name="title" ngModel required #auctionStatus='ngModel' [(ngModel)]="selectedOffer.auctionStatus">
+            <option>NEW</option>
+            <option>FOR_SALE</option>
+            <option>SOLD</option>
+            <option>PAID</option>
+            <option>DELIVERED</option>
+            <option>CLOSED</option>
+            <option>EXPIRED</option>
+            <option>WITHDRAWN</option>
+          </select>
+        </form>
+      </td>
+    </tr>
+    <tr class="bottom">
+      <td class="description">Number Of Bids:</td>
+      <td>
+        <form #edit4Form="ngForm">
+          <input [ngClass]="{ 'marked-warning3' : numberOfBids.invalid }" type="number" name="title"
+                 ngModel required #numberOfBids='ngModel'
+                 [(ngModel)]="selectedOffer.numberOfBids">
+          <div class="input-warning" *ngIf="numberOfBids.invalid">
+            <div *ngIf="numberOfBids.errors.required">{{ errorMessages(1) }}</div>
+          </div>
+        </form>
+      </td>
+    </tr>
+    <tr class="bottom">
+      <td class="description">Highest Bid:</td>
+      <td>
+        <form #edit5Form="ngForm">
+          <input [ngClass]="{ 'marked-warning4' : highestBid.invalid }" type="number" name="title"
+                 ngModel [required]="!checkForZeroAndNegatives()" #highestBid='ngModel'
+                 [(ngModel)]="selectedOffer.valueHighestBid">
+          <div class="input-warning" *ngIf="highestBid.invalid">
+            <div *ngIf="highestBid.errors.required">{{ errorMessages(1) }}</div>
+          </div>
+        </form>
+      </td>
+    </tr>
+  </table>
+  <div>
+    <button (click)="popupCancel()">Cancel</button>
+    <button (click)="popupReset()" [disabled]="!change()">Reset</button>
+    <button (click)="popupClear()">Clear</button>
+    <button (click)="popupSave()" [disabled]="!change() || (title.invalid || description.invalid ||
+      numberOfBids.invalid)">Save</button>
+    <button (click)="popupDelete()">Delete</button>
+  </div>
+
+  <div class="form-warning" *ngIf="title.invalid || description.invalid || numberOfBids.invalid">
+    <p>Please fix the input errors in the highlighted fields</p>
+  </div>
+</div>

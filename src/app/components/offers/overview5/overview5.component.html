@@ -1,0 +1,21 @@
+<div class="overview5">
+  <h4>Overview of all offered articles:</h4>
+  <div class="panels">
+    <div>
+      <table>
+        <tr class="top">
+          <td>Offer title</td>
+        </tr>
+        <tr *ngFor="let offer of getAllOffers(); let selectedIndex = index" (click)="onSelectOffer(selectedIndex)"
+            [ngClass]="{ 'highlight' : selectOffer != null && offer.title === selectOffer.title }" class="bottom">
+          <td>{{ offer.title }}</td>
+        </tr>
+      </table>
+      <button (click)="service.addRandomOffer()">Add Offer</button>
+    </div>
+    <div *ngIf="isSelected; else displayMessage">
+      <router-outlet></router-outlet>
+    </div>
+    <ng-template #displayMessage>Select an offer at the left</ng-template>
+  </div>
+</div>

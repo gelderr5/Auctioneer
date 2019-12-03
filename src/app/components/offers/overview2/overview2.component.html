@@ -1,0 +1,18 @@
+<div class="overview2">
+  <h4>Overview of all offered articles:</h4>
+  <div class="panels">
+    <div>
+      <table>
+        <tr class="top">
+          <td>Offer title</td>
+        </tr>
+        <tr *ngFor="let offer of offers" class="bottom">
+          <td (click)="resetSelected(); activateSelected($event.target.innerText)" tabindex="1">{{ offer.title }}</td>
+        </tr>
+      </table>
+      <button (click)="addRandomOffer(); activateSelected(offers[offers.length-1].title)">Add Offer</button>
+    </div>
+    <div *ngIf="isSelected; else displayMessage"><app-detail2 [(selectedOffer)]="selectOffer"></app-detail2></div>
+    <ng-template #displayMessage>Select an offer at the left</ng-template>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="detail2">
+  <table>
+    <tr class="top">
+      <th>Selected offer details</th>
+      <td></td>
+    </tr>
+    <tr class="bottom">
+      <td class="description">Title:</td>
+      <td>
+        <label>
+          <input type="text" [(ngModel)]="selectedOffer.title"/>
+        </label>
+      </td>
+    </tr>
+    <tr class="bottom">
+      <td class="description">Description:</td>
+      <td>
+        <label>
+          <input type="text" [(ngModel)]="selectedOffer.description"/>
+        </label>
+      </td>
+    </tr>
+    <tr class="bottom">
+      <td class="description">Status:</td>
+      <td>
+        <label>
+          <select [(ngModel)]="selectedOffer.auctionStatus">
+            <option>NEW</option>
+            <option>FOR_SALE</option>
+            <option>SOLD</option>
+            <option>PAID</option>
+            <option>DELIVERED</option>
+            <option>CLOSED</option>
+            <option>EXPIRED</option>
+            <option>WITHDRAWN</option>
+          </select>
+        </label>
+      </td>
+    </tr>
+    <tr class="bottom">
+      <td class="description">Number Of Bids:</td>
+      <td>
+        <label>
+          <input type="text" [(ngModel)]="selectedOffer.numberOfBids"/>
+        </label>
+      </td>
+    </tr>
+    <tr class="bottom">
+      <td class="description">Highest Bid:</td>
+      <td>
+        <label>
+          <input type="text" [(ngModel)]="selectedOffer.valueHighestBid"/>
+        </label>
+      </td>
+    </tr>
+  </table>
+  <button (click)="save(overview2.index, selectedOffer)">Save</button>
+  <button (click)="remove(overview2.index)">Delete</button>
+</div>
