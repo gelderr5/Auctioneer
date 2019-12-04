@@ -1,0 +1,25 @@
+<div class="login">
+  <div class="login-block">
+   <h4>Login</h4>
+   <form #loginForm="ngForm" class="login-form">
+     <div class="form-section">
+       <label>Email adress</label>
+       <input #email type="email" class="form-input" placeholder="Enter email">
+     </div>
+     <div class="form-section">
+       <label>Password</label>
+       <input #password type="password" class="form-input" placeholder="Password">
+     </div>
+     <button class="btn-login" (click)="service.signOn(email.value, password.value)"
+             type="submit">Log in</button>
+   </form>
+  </div>
+  <div class="alert alert-info">
+    You can use one of the predefined users to test this app:
+    <ul>
+      <li>telefoon@ryan.nl/bootopwater4</li>
+      <li>samsmith@gmail.com/halozeg23</li>
+    </ul>
+  </div>
+
+</div>
